@@ -1,0 +1,37 @@
+{
+  "name": "mern-mysql-loginreg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "db:create": "node dbUtils/createDB.js",
+    "dev": "nodemon server.js",
+    "client": "cd client & npm run start",
+    "es:start": "docker run -p 9200:9200 -p 9300:9300 --name elsearch -e 'discovery.type=single-node' docker.elastic.co/elasticsearch/elasticsearch:6.5.1",
+    "es:clean": "docker stop elsearch && docker rm elsearch",
+    "es:restart": "npm run es:clean && npm run es:start",
+    "es:fillDS": "node elsearch/insertingDocs.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bcryptjs": "2.4.3",
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.4",
+    "elasticsearch": "^15.2.0",
+    "express": "^4.16.3",
+    "full-text-search-light": "0.0.17",
+    "jsonwebtoken": "^7.4.2",
+    "jwt-decode": "^2.2.0",
+    "mysql": "^2.14.1",
+    "mysql2": "^1.6.1",
+    "nodemailer": "^4.7.0",
+    "nodemon": "^1.18.3",
+    "passport": "^0.4.0",
+    "passport-facebook-token": "^3.3.0",
+    "react-router-dom": "^4.3.1",
+    "request": "^2.88.0",
+    "sequelize": "^4.38.0"
+  }
+}

@@ -1,0 +1,27 @@
+{
+    "facebookAuth" : {
+        "clientID" : "286813295279177",
+        "clientSecret"  : "e398634cfb82371b62d2064b1d85bf67",
+        "callbackURL" : "http://localhost:4000/api/auth/facebook/callback",
+        "profileURL": "https://graph.facebook.com/v2.5/me?fields=first_name,last_name,email"
+
+    },
+    "database" : {
+        "dbname" : "conspectsharing",
+        "username" : "root",
+        "password" : "skyleone",
+        "testDB": "test",
+        "usersTableName": "users",
+        "conspectsTableName": "conspects"
+    },
+    "emailConfirm" : {
+        "secret" : "ohmygodsosecret"
+    },
+    "elsearch" : {
+        "host" : "192.168.99.100:9200",
+        "conspectIndex": "conspects",
+        "conspectType": "conspects-type",
+        "restartedServer": false
+    }
+
+}
