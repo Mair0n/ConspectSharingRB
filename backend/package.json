@@ -6,7 +6,6 @@
   "scripts": {
     "db:create": "node dbUtils/createDB.js",
     "dev": "nodemon server.js",
-    "client": "cd client & npm run start",
     "es:start": "docker run -p 9200:9200 -p 9300:9300 --name elsearch -e 'discovery.type=single-node' docker.elastic.co/elasticsearch/elasticsearch:6.5.1",
     "es:clean": "docker stop elsearch && docker rm elsearch",
     "es:restart": "npm run es:clean && npm run es:start",

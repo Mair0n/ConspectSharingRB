@@ -203,4 +203,39 @@ users.post('/deleteUserConspects', (req,res) => {
     res.send("deleted")
 })
 
+users.get('/search/:q', (req, res) => {
+    const q = req.params.q;
+    client.search({
+        index: cnf.elsearch.conspectIndex,
+        type: cnf.elsearch.conspectType,
+        body: {
+            query: {
+                bool: {
+                    should: [{
+                        match: {
+                            title:q
+                        },
+                        match: {
+                            description:q
+                        },
+                        match: {
+                            body:q
+                        }
+                    }]
+                }
+            }
+        }
+    }).then(hits => {
+        const cnsp = []
+        hits.hits.hits.forEach(hit => {
+            cnsp.push(hit._source)
+        });
+        return cnsp
+    }).then(hits => {
+        res.send(hits)
+    }).catch(error => {
+        res.send(error)
+    })
+})
+
 module.exports = users

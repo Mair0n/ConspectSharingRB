@@ -1,11 +1,26 @@
 import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 
+
 class Navbar extends Component {
+
+    state ={
+        query:''
+    }
+
     logOut(e) {
         e.preventDefault()
         localStorage.removeItem('usertoken')
         this.props.history.push(`/`)
+    }
+
+    onChange(e) {
+        this.setState({[e.target.name]:e.target.value})
+    }
+
+
+    onSearch(e) {
+        this.props.history.push('/search/'+this.state.query)
     }
 
     render() {
@@ -53,6 +68,16 @@ class Navbar extends Component {
                 <div className="collapse navbar-collapse justify-content-md-center"
                     id="navbar1">
                     <ul className="navbar-nav">
+                        <li className="nav-item">
+                            <form noValidate onSubmit={this.onSearch.bind(this)}>
+                            <input type="text"
+                                    className="form-control"
+                                    name="query"
+                                    value={this.state.query}
+                                    onChange={this.onChange.bind(this)}
+                                />
+                            </form>
+                        </li>
                         <li className="nav-item">
                             <Link to="/" className="nav-link">
                                 Главная

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import jwt_decode from 'jwt-decode'
 import ConspectAddForm from './ConspectAddForm.js'
+import './css/Profile.css'
 
 class Profile extends Component {
     constructor() {
@@ -31,25 +32,16 @@ class Profile extends Component {
         return (
             <div className="container">
                 <div className="jumbotron mt-5">
-                    <div className="col-sm-8 mx-auto">
-                        <h1 className="text-center">Профиль</h1>
+                    <div className="profileBlock d-flex flex-row justify-content-around">
+                        <div className="p-6">
+                            <h1 className="text-center">Профиль</h1>
+                        </div>
+                        <div className="p-6 userDataCol rounded border-primary">
+                            <p>Имя: {this.state.first_name}</p>
+                            <p>Фамилия: {this.state.last_name}</p>
+                            <p>Email: {this.state.email}</p>
+                        </div>
                     </div>
-                    <table className="table table-sm col-md-6 mx-auto">
-                        <tbody>
-                            <tr>
-                                <td>Имя</td>
-                                <td>{this.state.first_name}</td>
-                            </tr>
-                            <tr>
-                                <td>Фамилия</td>
-                                <td>{this.state.last_name}</td>
-                            </tr>
-                            <tr>
-                                <td>Email</td>
-                                <td>{this.state.email}</td>
-                            </tr>
-                        </tbody>
-                    </table>
                     <ConspectAddForm user={jwt_decode(localStorage.usertoken).id}/>
                 </div>
             </div>

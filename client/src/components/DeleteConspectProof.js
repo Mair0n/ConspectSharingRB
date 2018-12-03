@@ -19,9 +19,9 @@ class DeleteConspectProof extends Component {
         
         if (this.props.isVisible)
         return (
-            <span>Удалить выбранные конспекты?
-                <img src={proofIcon} onClick={() => {this.props.deleteProof(true)}} display="inline" width="15px" height="15px" alt="delete Icon"/>
-                <img src={delIcon} onClick={() => {this.props.deleteProof(false)}} display="inline" width="15px" height="15px" alt="delete Icon"/>
+            <span className="conspectDeleteSpan">Удалить выбранные конспекты?
+                <img src={proofIcon} onClick={() => {this.props.deleteProof(true)}} display="inline" alt="delete Icon"/>
+                <img src={delIcon} onClick={() => {this.props.deleteProof(false)}} display="inline" alt="delete Icon"/>
             </span>
         )
         else return null;

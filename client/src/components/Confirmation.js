@@ -19,7 +19,7 @@ class Confirmation extends Component {
             <div className="container">
                 <div className="jumbotron mt-5">
                     <div className="col-sm-8 mx-auto">
-                        <button className="btn-lg" onClick={this.onClick}>Click to confirm</button>
+                        <button className="btn-lg" onClick={this.onClick}>Нажмите для подтверждения</button>
                     </div>
                 </div>
             </div>

@@ -8,6 +8,7 @@ import Register from './components/Register'
 import Profile from './components/Profile'
 import Confirmation from './components/Confirmation';
 import ConspectCard from './components/ConspectCard';
+import Search from './components/Search'
 
 class App extends Component {
   render () {
@@ -22,6 +23,7 @@ class App extends Component {
             <Route exact path="/profile" component={Profile}/>
             <Route path="/confirmation/:token" component={Confirmation} />
             <Route path="/conspect/:id" component={ConspectCard} />
+            <Route path="/search/:q" component={Search} />
           </div>
         </div>
       </Router>

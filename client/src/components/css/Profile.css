@@ -1,0 +1,18 @@
+.p-6 {
+    align-items: center;
+    display: flex;
+}
+
+.userDataCol {
+    flex-direction: column;
+    border:1px solid black;
+}
+
+.userDataCol p {
+    margin: 2px;
+    float:left;
+}
+
+.profileBlock {
+    margin-bottom: 10px;
+}

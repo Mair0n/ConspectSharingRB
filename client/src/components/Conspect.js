@@ -7,12 +7,9 @@ class Conspect extends Component {
 
         return (
             <div className="conspect">
-                <div className="conspectHeader">
-                    <h4><Link to={"/conspect/"+this.props.conspect.id}>{this.props.conspect.title}</Link></h4>
-                    <h5>{this.props.conspect.description}</h5>
-                    <h6>{this.props.conspect.depNumber}</h6>
-                </div>
-                
+                <h4><Link to={"/conspect/"+this.props.conspect.id}>{this.props.conspect.title}</Link></h4>
+                <h5>{this.props.conspect.description}</h5>
+                <h6>{this.props.conspect.depNumber}</h6>   
             </div>
         )
     }

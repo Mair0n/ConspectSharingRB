@@ -106,4 +106,15 @@ export const deleteUserConspect = (conspectsToDelete) => {
         })
 }
 
+export const searchConspects = (q) => {
+    return axios
+    .get('http://localhost:3000/users/search/'+q)
+    .then(res => {
+        return res.data
+    })
+    .catch(err => {
+        console.log(err)
+    })
+}
+
 

@@ -170,7 +170,7 @@ class ConspectAddForm extends Component {
                     <SimpleMDE onChange={this.handleChange.bind(this)} /> 
                     <button type="submit"
                         className="btn btn-primary">
-                        Save
+                        Сохранить
                     </button>
                 </form>
                 
@@ -208,7 +208,7 @@ class ConspectAddForm extends Component {
                         ): null}
                     </tbody>
                 </table>
-                <button type="button" className="btn" onClick={this.deleteConspects.bind(this)}>Delete</button>
+                <button type="button" className="btn btn-dark" onClick={this.deleteConspects.bind(this)}>Удалить выбранные</button>
                 {this.state.deleteConfirm ? <DeleteConspectProof isVisible={true} deleteProof={this.deleteProof}/> : <DeleteConspectProof isVisible={false} deleteProof={this.deleteProof}/>}
             </div>
         )
